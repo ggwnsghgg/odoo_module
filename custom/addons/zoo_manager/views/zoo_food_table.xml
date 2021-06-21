@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='zoo_food_table_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Food Table</field>
+        <field name="res_model">zoo.food_table</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Form -->
+    <record id="zoo_food_table_action_view_form" model="ir.ui.view">
+        <field name="name">Zoo Food Form</field>
+        <field name="model">zoo.food_table</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                        <group>
+                            <field name="animal_type_id" />
+                            <field name="food_type_id"/>
+                            <field name="food_name_id" />
+                            <field name="food_price_id"/>
+                        </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+
+    <!-- Tree -->
+     <record id="zoo_food_table_action_view_tree" model="ir.ui.view">
+        <field name="name">Zoo Food Table List</field>
+        <field name="model">zoo.food_table</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="animal_type_id"/>
+                <field name="food_type_id"/>
+                <field name="food_name_id" />
+                <field name="food_price_id"/>
+            </tree>
+         </field>
+    </record>
+
+
+    <menuitem name="Zoo Food Table"
+              id="zoo_food_table"
+              parent="zoo_menu"
+              action="zoo_food_table_action"
+              sequence="2"/>
+</odoo>

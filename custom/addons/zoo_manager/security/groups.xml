@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_zoo" model="res.groups">
+        <field name="name">Zoo manager</field>
+        <field name="users" eval="[(4, ref('base.user_admin'))]"/>
+    </record>
+<!--    <record id="group_zoo_user" model="res.groups">-->
+<!--        <field name="name">Zoo user</field>-->
+<!--        <field name="users" eval="[(4, ref('base.group_admin'))]"/>-->
+<!--    </record>-->
+</odoo>

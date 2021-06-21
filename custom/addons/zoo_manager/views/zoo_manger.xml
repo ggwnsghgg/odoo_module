@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Zoo Manger -->
+
+    <record id='zoo_manger_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Manger</field>
+        <field name="res_model">zoo.manger</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="zoo_manger_view_form" model="ir.ui.view">
+        <field name="name">Zoo Manager Form</field>
+        <field name="model">zoo.manger</field>
+        <field name="arch" type="xml">
+            <form string="Patients">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="name" />
+                        <field name="animal_type_id" />
+                        <field name="animal_age" />
+                        <field name="animal_year" />
+                        <field name="time_for_food"/>
+                        <field name="food_ids" />
+
+                    </group>
+                </sheet>
+            </form>
+        </field>
+     </record>
+
+     <record id="zoo_manger_view_tree" model="ir.ui.view">
+        <field name="name">Zoo Manager List</field>
+        <field name="model">zoo.manger</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="animal_type_id"/>
+                <field name="time_for_food"/>
+                <field name="animal_age"/>
+                <field name="animal_year" invisible="1"/>
+                <field name="food_ids"/>
+            </tree>
+         </field>
+    </record>
+
+
+
+    <!-- Zoo Food Name -->
+
+    <record id='zoo_manger_food_name_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Food Name</field>
+        <field name="res_model">zoo.food_name</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="zoo_food_name_view_form" model="ir.ui.view">
+        <field name="name">Zoo Food Name Form</field>
+        <field name="model">zoo.food_name</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"  string='Food Name'/>
+                        <field name="food_type_id" string="Food Type"/>
+                        <field name="food_price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='zoo_food_name_view_tree' model='ir.ui.view'>
+        <field name="name">Zoo Food Name Tree</field>
+        <field name="model">zoo.food_name</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name"/>
+                <field name="food_type_id" string="Food Type"/>
+                <field name="food_price"/>
+            </tree>
+         </field>
+    </record>
+
+
+
+     <!-- Zoo Food Type -->
+
+    <record id='zoo_manger_food_type_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Food Type</field>
+        <field name="res_model">zoo.food_type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="zoo_food_type_view_form" model="ir.ui.view">
+        <field name="name">Zoo Food Type Form</field>
+        <field name="model">zoo.food_type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="sequence" widget="handle"/>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+     <record id="zoo_food_type_view_tree" model="ir.ui.view">
+        <field name="name">Zoo Food Type Tree</field>
+        <field name="model">zoo.food_type</field>
+        <field name="arch" type="xml">
+            <tree >
+                 <field name="sequence" widget="handle"/>
+                 <field name="name"/>
+            </tree>
+         </field>
+    </record>
+
+
+
+  <!-- Animal Type -->
+
+    <record id='zoo_manger_animal_type_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Animal Type</field>
+        <field name="res_model">zoo.animal_type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="zoo_animal_type_view_form" model="ir.ui.view">
+        <field name="name">Zoo Animal Type Form</field>
+        <field name="model">zoo.animal_type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"  string='Animal Type'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='zoo_animal_type_view_tree' model='ir.ui.view'>
+        <field name="name">Zoo Animal Type Tree</field>
+        <field name="model">zoo.animal_type</field>
+        <field name="arch" type="xml">
+            <tree editable="top">
+                <field name="name"  string='Animal Type'/>
+            </tree>
+         </field>
+    </record>
+
+
+    <!-- Food Quantity -->
+
+    <record id='zoo_manger_food_quantity_action' model='ir.actions.act_window'>
+        <field name="name">Zoo Food Quantity</field>
+        <field name="res_model">zoo.food_quantity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="zoo_manger_food_quantity_view_form" model="ir.ui.view">
+        <field name="name">Zoo Food Quantity Form</field>
+        <field name="model">zoo.food_quantity</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="animal_type_id" invisible = "1"/>
+                        <field name="food_table_id" />
+                        <field name="food_price_ids"/>
+                        <field name="food_weight" />
+                        <field name="currency_id"/>
+                        <field name="food_subtotal"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='zoo_manger_food_quantity_view_tree' model='ir.ui.view'>
+        <field name="name">Zoo Food Quantity Tree</field>
+        <field name="model">zoo.food_quantity</field>
+        <field name="arch" type="xml">
+<!--            <tree editable="bottom">-->
+            <tree editable="bottom">
+                <field name="animal_type_id" invisible = "1"/>
+                <field name="food_table_id" />
+                <field name="food_price_ids"/>
+                <field name="food_weight"/>
+                <field name="currency_id"/>
+                <field name="food_subtotal"/>
+            </tree>
+         </field>
+    </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- menuitem -->
+
+    <menuitem name="Zoo Manger"
+              id="zoo_menu" />
+
+
+    <menuitem name="Zoo Manger"
+              id="zoo_manger"
+              parent="zoo_menu"
+              action="zoo_manger_action"
+              sequence="1"/>
+
+    <menuitem id="zoo_configuration"
+              name="Configuration"
+              parent="zoo_menu"
+              sequence="3"/>
+
+    <menuitem id="menu_zoo_food_name"
+              action="zoo_manger_food_name_action"
+              name="Zoo Food Name"
+              sequence="3" parent="zoo_configuration"/>
+
+    <menuitem id="menu_zoo_food_type"
+              action="zoo_manger_food_type_action"
+              name="Zoo Food Type"
+              sequence="1" parent="zoo_configuration"/>
+
+    <menuitem id="menu_zoo_animal_type"
+              action="zoo_manger_animal_type_action"
+              name="Zoo Animal Type"
+              sequence="2" parent="zoo_configuration"/>
+
+    <menuitem id="menu_zoo_food_quantity"
+              action="zoo_manger_food_quantity_action"
+              name="Zoo Food Quantity"
+              sequence="4" parent="zoo_configuration"/>
+
+
+
+</odoo>
