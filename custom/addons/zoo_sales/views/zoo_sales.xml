@@ -21,7 +21,7 @@
         <field name="model">zoo.manger</field>
         <field name="inherit_id" ref="zoo_manager.zoo_manger_view_form"/>
         <field name="arch" type="xml">
-          <xpath expr="//group" position="before">
+          <xpath expr="//field[@name='animal_image']" position="before">
                <div class="oe_button_box" name="button_box">
                     <field name = "sale_move_id" invisible ="1"/>
                     <button type="object"
@@ -35,6 +35,19 @@
           </xpath>
         </field>
      </record>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

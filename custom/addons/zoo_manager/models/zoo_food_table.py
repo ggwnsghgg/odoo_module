@@ -15,7 +15,6 @@ class Zoofoodtable(models.Model):
     food_name_id = fields.Many2one('zoo.food_name', domain="[('food_type_id', '=', food_type_id)]")
     food_price_id = fields.Float(related='food_name_id.food_price')
 
-
     def name_get(self):
         res = []
         for record in self :

@@ -16,15 +16,19 @@
         <field name="arch" type="xml">
             <form string="Patients">
                 <sheet>
+                    <field name="animal_image" widget="image" class="oe_avatar"/>
+                    <div class="main_title">
+                       <h1>
+                           <field name="name" />
+                       </h1>
+                    </div>
                     <group>
                         <field name="partner_id"/>
-                        <field name="name" />
                         <field name="animal_type_id" />
                         <field name="animal_age" />
                         <field name="animal_year" />
                         <field name="time_for_food"/>
                         <field name="food_ids" />
-
                     </group>
                 </sheet>
             </form>
@@ -37,11 +41,11 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
-                <field name="animal_type_id"/>
-                <field name="time_for_food"/>
+                <field name="time_for_food" widget="remaining_days"/>
                 <field name="animal_age"/>
                 <field name="animal_year" invisible="1"/>
                 <field name="food_ids"/>
+                <field name="partner_id"/>
             </tree>
          </field>
     </record>
@@ -65,7 +69,7 @@
                     <group>
                         <field name="name"  string='Food Name'/>
                         <field name="food_type_id" string="Food Type"/>
-                        <field name="food_price"/>
+                        <field name="food_price" />
                     </group>
                 </sheet>
             </form>
@@ -76,7 +80,7 @@
         <field name="name">Zoo Food Name Tree</field>
         <field name="model">zoo.food_name</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree>
                 <field name="name"/>
                 <field name="food_type_id" string="Food Type"/>
                 <field name="food_price"/>
@@ -102,7 +106,7 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="sequence" widget="handle"/>
+                        <field name="sequence" widget="handle" invisible="1"/>
                         <field name="name"/>
                     </group>
                 </sheet>
@@ -115,7 +119,7 @@
         <field name="name">Zoo Food Type Tree</field>
         <field name="model">zoo.food_type</field>
         <field name="arch" type="xml">
-            <tree >
+            <tree editable="top">
                  <field name="sequence" widget="handle"/>
                  <field name="name"/>
             </tree>
@@ -152,11 +156,13 @@
         <field name="name">Zoo Animal Type Tree</field>
         <field name="model">zoo.animal_type</field>
         <field name="arch" type="xml">
-            <tree editable="top">
+            <tree>
                 <field name="name"  string='Animal Type'/>
             </tree>
          </field>
     </record>
+
+
 
 
     <!-- Food Quantity -->
@@ -178,7 +184,7 @@
                         <field name="animal_type_id" invisible = "1"/>
                         <field name="food_table_id" />
                         <field name="food_price_ids"/>
-                        <field name="food_weight" />
+                        <field name="food_weight"/>
                         <field name="currency_id"/>
                         <field name="food_subtotal"/>
                     </group>

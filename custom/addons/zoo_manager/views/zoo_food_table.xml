@@ -20,6 +20,7 @@
                             <field name="food_type_id"/>
                             <field name="food_name_id" />
                             <field name="food_price_id"/>
+
                         </group>
                 </sheet>
             </form>
@@ -33,11 +34,12 @@
         <field name="name">Zoo Food Table List</field>
         <field name="model">zoo.food_table</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="bottom">
                 <field name="animal_type_id"/>
                 <field name="food_type_id"/>
                 <field name="food_name_id" />
                 <field name="food_price_id"/>
+
             </tree>
          </field>
     </record>
