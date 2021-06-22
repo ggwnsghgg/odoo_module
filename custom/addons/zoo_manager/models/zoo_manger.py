@@ -20,8 +20,9 @@ class Zooanimalmanager(models.Model):
     animal_year = fields.Date('Animal Adopt')
     food_ids = fields.One2many('zoo.food_quantity', 'manger_id', string='Food Name')
     zoo_food_table_id = fields.Many2one('zoo.food_table')
-    partner_id = fields.Many2one('res.partner', string="Partner ID")
+
     time_for_food = fields.Datetime('Time For Food')
+    partner_id = fields.Many2one('res.partner', string="ZooKeeper ID")
 
 
 class ConfigSetting(models.TransientModel):

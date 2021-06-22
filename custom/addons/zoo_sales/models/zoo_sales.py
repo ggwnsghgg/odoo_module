@@ -101,6 +101,7 @@ class Zooanimalmanager(models.Model):
         order_line_vals = []
         partner_ids = self.partner_id
 
+
         for food in self.food_ids:
             food_name = food.food_table_id.food_name_id.name
             food_weight = food.food_weight
@@ -126,7 +127,7 @@ class Zooanimalmanager(models.Model):
             'zoo_boolean': True,
             'zoo_manger_id': self.id
         })
-        _logger.debug(' -------------------------------------------------------- %s', self.partner_id )
+        _logger.debug(' -------------------------------------------------------- %s', self.partner_id)
         self.update({
                     'sale_move': True,
                     'sale_move_id': sale_order.id

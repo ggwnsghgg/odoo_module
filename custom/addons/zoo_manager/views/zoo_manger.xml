@@ -80,7 +80,7 @@
         <field name="name">Zoo Food Name Tree</field>
         <field name="model">zoo.food_name</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree editable="top">
                 <field name="name"/>
                 <field name="food_type_id" string="Food Type"/>
                 <field name="food_price"/>
@@ -205,7 +205,7 @@
                 <field name="food_price_ids"/>
                 <field name="food_weight"/>
                 <field name="currency_id"/>
-                <field name="food_subtotal"/>
+                <field name="food_subtotal" sum="Total Of Food Subtotal"/>
             </tree>
          </field>
     </record>
