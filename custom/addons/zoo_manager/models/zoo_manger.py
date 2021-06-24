@@ -14,13 +14,10 @@ class Zooanimalmanager(models.Model):
     _description = 'food manager'
 
     name = fields.Char(string='Animal Name')
-    animal_image = fields.Binary("Animal Image")
     animal_type_id = fields.Many2one('zoo.animal_type', string="Animal Type")
     animal_age = fields.Integer('Animal Age', default=1)
-    animal_year = fields.Date('Animal Adopt')
     food_ids = fields.One2many('zoo.food_quantity', 'manger_id', string='Food Name')
     zoo_food_table_id = fields.Many2one('zoo.food_table')
-
     time_for_food = fields.Datetime('Time For Food')
     partner_id = fields.Many2one('res.partner', string="ZooKeeper ID")
 

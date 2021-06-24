@@ -41,8 +41,7 @@
                 <field name="food_price_id"/>
 
             </tree>
-         </field>
-    </record>
+             </field>
 
 
     <menuitem name="Zoo Food Table"
