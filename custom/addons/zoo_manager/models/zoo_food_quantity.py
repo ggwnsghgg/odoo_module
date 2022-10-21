@@ -10,7 +10,6 @@ class foodquantity(models.Model):
     _description = 'food quantity'
 
     manger_id = fields.Many2one('zoo.manger')
-
     animal_type_id = fields.Many2one('zoo.animal_type',
                                      string="Animal Type",
                                      related="manger_id.animal_type_id",

@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id='sale_order_line_action' model='ir.actions.act_window'>
+        <field name="name">Sale Order Line</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+   <record id="sale_order_line_tree" model="ir.ui.view">
+        <field name="name">Sale Order Line</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree" />
+        <field name="arch" type="xml">
+            <field name="price_subtotal" position="before">
+                <field name="tax_id" widget="many2many_tags"/>
+            </field>
+            <field name="name" position="before">
+                <field name="product_id"/>
+            </field>
+            <field name="tax_id" position="before">
+                <field name="price_unit"/>
+            </field>
+               <field name="price_unit" position="before">
+                <field name="product_uom"/>
+            </field>
+            <field name="qty_delivered" position="replace">
+                <field name="qty_delivered" optional="hide"/>
+            </field>
+            <field name="qty_invoiced" position="replace">
+                <field name="qty_invoiced" optional="hide"/>
+            </field>
+            <field name="qty_to_invoice" position="replace">
+                <field name="qty_to_invoice" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_sale_order"
+                name="Sale Order Line"
+                action="sale_order_line_action"
+                parent="sale.sale_order_menu"
+                sequence="2"/>
+
+</odoo>
