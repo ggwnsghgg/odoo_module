@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="payment_acquirer_view_form_inherit_payment_inipay" model="ir.ui.view">
+        <field name="name">payment.acquirer.view.form.inherit.payment.inipay</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.acquirer_form"/>
+        <field name="arch" type="xml">
+            <xpath expr='//group[@name="acquirer"]' position='inside'>
+                <group attrs="{'invisible': [('provider', '!=', 'inipay')]}">
+                    <field name="inipay_mid"/>
+                    <field name="inipay_mid_key"/>
+                    <field name="inipay_mid_iv"/>
+                    <field name="inipay_sign_key"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

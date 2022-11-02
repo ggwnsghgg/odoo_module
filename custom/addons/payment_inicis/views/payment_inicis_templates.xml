@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <template id="redirect_form">
+        <form t-att-action="api_url" id="payForm" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="version" required="required" t-att-value="1.0"/>
+          <input type="hidden" name="mid" required="required" t-att-value="INITEST"/>
+          <input type="hidden" name="oid" required="required" t-att-value="reference"/>
+          <input type="hidden" name="goodsname" required="required" t-att-value="맥북프로"/>
+          <input type="hidden" name="price"  required="required" t-att-value="1000"/>
+          <input type="hidden" name="currency"  required="required" t-att-value="WON"/>
+          <input type="hidden" name="buyername"  required="required" t-att-value="Ruden"/>
+          <input type="hidden" name="buyertel"  required="required" t-att-value="buyertel"/>
+          <input type="hidden" name="timestamp"  required="required" t-att-value="1581574116856"/>
+          <input type="hidden" name="signature" required="required" t-att-value="e3a9de48e5c9be23caa469e9edc2a7ae1447d486ac37ecb69e715f558e5f239f"/>
+          <input type="hidden" name="returnUrl" required="required" t-att-value="return_url"/>
+          <input type="hidden" name="mKey" required="required" t-att-value="a7e01e0fda1f05dffd353e65051b8f30bb6c88d76f812eb0b6af94b10c12cb5f8"/>
+          <input type="hidden" name="gopaymethod"  t-att-value="Card"/>
+          <input type="hidden" name="languageView"  t-att-value="ko"/>
+          <input type="hidden" name="merchantData"  required="required" t-att-value=""/>
+        </form>
+    </template>
+
+</odoo>
